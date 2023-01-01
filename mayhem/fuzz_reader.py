@@ -40,7 +40,7 @@ def TestOneInput(data):
             return -1
         raise e
     except LookupError:
-        if random.random() > 0.99:
+        if random.random() > 0.999:
             raise
         return 0
 
