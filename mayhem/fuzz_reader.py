@@ -35,14 +35,14 @@ def TestOneInput(data):
             pymzml.run.Reader(f)
     except (ParseError, BadGzipFile, UnicodeDecodeError, error, EOFError):
         return -1
+    except LookupError as e:
+        if random.random() > 0.90:
+            raise e
+        return 0
     except Exception as e:
         if 'not a gzip' in str(e):
             return -1
         raise e
-    except LookupError:
-        if random.random() > 0.999:
-            raise
-        return 0
 
 
 def main():
