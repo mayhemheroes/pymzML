@@ -8,7 +8,7 @@ import fuzz_helpers
 import random
 from contextlib import contextmanager
 
-with atheris.instrument_imports(include=['pymzml']):
+with atheris.instrument_imports(include=['pymzml', 'xml']):
     import pymzml
 
 # Exceptions
@@ -38,7 +38,6 @@ def TestOneInput(data):
     except Exception as e:
         if 'not a gzip' in str(e):
             return -1
-        print(type(e), e)
         raise e
     except LookupError:
         if random.random() > 0.99:
