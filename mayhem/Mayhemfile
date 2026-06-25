@@ -1,0 +1,9 @@
+project: pymzML
+target: fuzz-reader
+testsuite:
+    - file:///mayhem/mayhem/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_reader
+    libfuzzer: true
+    timeout: 12

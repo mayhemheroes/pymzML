@@ -1,0 +1,10 @@
+# Keep .git — the spec bakes the full mayhem-branch history into the image (the Dockerfile COPYs the
+# checkout into /mayhem, and the grader / PATCH tier expect upstream history + the additive commit).
+# Prune only build noise that would bloat the context.
+**/__pycache__/
+*.pyc
+mayhem/wheelhouse/
+.tox/
+*.egg-info/
+build/
+dist/
